@@ -1,12 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-typedef struct Nodo {
-    char nombre[50];
-    int* asistencias;
-    int numDias;
-    struct Nodo* siguiente;
-} Nodo;
+#include <stdbool.h>
+
+typedef struct nombre{
+    char Nombres[60];
+    char Apll_P[35];
+    char Apll_M[35];
+}TNombre;
+
+typedef struct alumno{
+    TNombre nombre;
+    int ID;
+    bool asistencia;
+    struct alumno* siguiente;
+}TAlumno;
+
+typedef struct lista{
+    int dia;
+    TAlumno *cabecera;
+    struct lista* siguiente;
+}TLista;
 
 Nodo* crearnodo(char nombre[]);
 Nodo* insertarinicio(Nodo* cabeza, char nombre[]);
@@ -137,7 +151,3 @@ void mostrarlista(Nodo* cabeza) {
         actual = actual->siguiente;
     }
 }
-
-
-
-
